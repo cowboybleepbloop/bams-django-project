@@ -1,0 +1,63 @@
+{% extends "flp_app/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    {% load static %}
+
+    <section>
+        <div class="container mt-5">
+
+            <div class="card col-md-2 my-5" style="width: 18rem;">
+                <img src="{{ user.profile.image.url }}" class="card-img-top rounded-circle" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Hi, {{ user.username }}</h5>
+                  
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{ user.first_name }} {{ user.last_name }}</li>
+                  <li class="list-group-item">{{ user.email }}</li>
+                </ul>
+                <div class="card-body">
+                    <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#editModal">Edit profile</button>
+                    <button class="btn btn-primary btn-sm m-1">Manage Bookmarks</button>
+                </div>
+              </div>
+            
+            <h1 class='my-4'></h1>
+
+         </div>
+        
+          
+    </section>
+
+ <!--Profile Edit Modal-->
+  
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form method="POST" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <fieldset class='form-group'>
+                    <legend class="border-bottom mb-4">
+                        User Info
+                    </legend>
+                    {{ u_form|crispy }}
+                    {{ p_form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-primary my-2" type='submit'>Save Changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
