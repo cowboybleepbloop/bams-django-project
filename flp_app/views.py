@@ -19,6 +19,13 @@ def blog(request):
     
     return render(request, 'flp_app/blog.html', context)
 
+
+#calculator views
+def auto_payment_calculator(request): 
+    return render(request, 'flp_app/auto-payment-calculator.html', {'title': 'Auto Payment Calculator'})
+def mortgage_calculator(request): 
+    return render(request, 'flp_app/mortgage-calculator.html', {'title': 'Mortgage Payment Calculator'})
+
     
 
 #class based views

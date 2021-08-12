@@ -11,13 +11,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 #import environ
 import os
-import sys
+import environ
 from pathlib import Path
 
 
 # Initialise environment variables
-#env = environ.Env()
-#environ.Env.read_env()
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,7 +47,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_bootstrap5',
-    'crispy_forms'
+    'crispy_forms',
+    'django_extensions',
+    
+
 ]
 
 MIDDLEWARE = [
@@ -143,11 +146,16 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ['EMAIL_USER']
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASSWORD']
+EMAIL_HOST_USER = env('EMAIL_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_PASSWORD')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}

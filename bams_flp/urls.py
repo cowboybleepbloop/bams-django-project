@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 
 
 
+
 #login and logout are built in views
 urlpatterns = [
     path('', include('flp_app.urls')),
@@ -39,3 +40,5 @@ urlpatterns = [
 
 if settings.DEBUG:
    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #THERE IS A DIFFERENT METHOD OF SERVING STATIC FILES UPLOADED USER DURING DEPLOYMENT. THIS WILL HAVE TO CHANGE WHEN THE PROJECT IS DEPLOYED
+
+
