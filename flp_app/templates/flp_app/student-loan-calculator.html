@@ -11,35 +11,37 @@
             <div class="container">
             <div class="col-md-12 paymentCalc">
             <div class="row align-items-center justify-content-between">
-            <h1 class='text-center'>Calculate Your Monthly Mortgage Payment</h1>
+            <h1 class="text-center">Estimate Your Student Loan Payment</h1>
             <div class="col-md-6">
             
                 <form id="loanCalc" action="" method="get" class="">
-                <div class="col-md-6">
-                    
+
+                <div class="col-md-6 my-3">
                     <div class="form-group">
-                    <label for="vehiclePrice">Home Price</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="vehiclePrice" placeholder="Home Price">
+                    <label for="loanAmount">Loan Amount ($)</label>
+                    <input type="range" class="form-range" min="1000" max="200000" id="loanAmount" value="" onchange="rangePrimary1.value=value">
+                    <input type="text" id="rangePrimary1"/>
                     </div>
                 </div>
-                <div class="col-md-6">
+
+               
+                
+                <div class="col-md-6 my-3">
                     <div class="form-group">
-                    <label for="downPayment">Down Payment</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="downPayment" placeholder="Down Payment" value="0">
+                    <label for="intRate">Interest Rate (%)</label>
+                    <input type="range" class="form-range" min="1" max="12" step="0.25" id="intRate" value="" onchange="rangePrimary2.value=value">
+                    <input type="text" id="rangePrimary2"/>
                     </div>
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-6 my-3">
                     <div class="form-group">
-                    <label for="intRate">Interest Rate</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="intRate" placeholder="Interest Rate" value="0">
+                    <label for="loanTerm">Loan Term (Years)</label>
+                    <input type="range" class="form-range" min="1" max="30" step="1" id="loanTerm" value="" onchange="rangePrimary3.value=value">
+                    <input type="text" id="rangePrimary3"/>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                    <label for="loanTerm">Loan Term in Years</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="loanTerm" placeholder="Loan Term (ex: 30)">
-                    </div>
-                </div>
+
                 <div class="clearfix"></div>
                 <div class="col-md-12">
                     <a href="#" class="btn btn-secondary my-3" onclick="calculatePayments()" id="calculate" value="Calulate">Calculate</a>
@@ -55,43 +57,38 @@
             </div>
             
             </div>
+
+
+            <div class="card mt-3">
+                <div class="card-body">
+                <h5 class="card-title text-dark">Hey! Have you filled out your FAFSA yet this year?</h5>
+                <p class="card-text text-dark">Don't miss out on federal aid. It's free so you should definitely do it.</p>
+                <a href="https://studentaid.gov/h/apply-for-aid/fafsa" class="btn btn-primary d-inline">Start the FAFSA</a>
+                <a href="#" class="btn btn-primary d-inline">Get FAFSA Advice</a>
+                </div>
+            </div>
+
         </div>
+
+    
     </section>
    <!--CALCULATOR END-->
+
+    
 
    <!--JS FUNCTION BEGIN-->
   <script>
     function calculatePayments(){
-  var vehiclePrice = document.getElementById('vehiclePrice').value,
+  var loanAmount = document.getElementById('loanAmount').value,
       loanTerm = document.getElementById('loanTerm').value,
       intRate = document.getElementById('intRate').value,
-      downPayment = document.getElementById('downPayment').value,
-      amount = parseInt(vehiclePrice),
+      amount = parseInt(loanAmount),
       years = parseInt(loanTerm),
       months = years*12,
-      down  = parseInt(downPayment),
       annInterest = parseFloat(intRate),
-      monInt = annInterest / 1200;
+      monInt = annInterest / 1200,
+      down = 0;
 
-      if(!amount){
-        alert('Please fill in all fields');
-        return;
-      }
-
-      if(!months){
-        alert('Please fill in all fields');
-        return;
-      }
-
-      if(!downPayment){
-        down = 0;
-        downPayment = document.getElementById('downPayment').value = '0';
-      }
-
-      if(!annInterest){
-        alert('Please fill in all fields');
-        return;
-      }
 
 
       var calc = ((monInt + (monInt / (Math.pow((1 + monInt), months) -1))) * (amount - (down || 0))).toFixed(2);
@@ -107,5 +104,7 @@
   </script>
 
    <!--JS FUNCTION END-->
+
+   
 
 {% endblock content %}

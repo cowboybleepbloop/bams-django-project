@@ -1,0 +1,111 @@
+{% extends "flp_app/base.html" %}
+
+{% block content %}
+    {% load static %}
+
+<section class="p-5">
+    <div class="container">
+        <div class="row text-center g-4 m-3">
+
+            <!--card 1-->
+            <div class="col-md ">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-wallet2"></i>
+                        </div>
+                       <a href="{% url 'auto-payment-calculator' %}" ><h3 class="card-title mb-3">Car Payment Calculator</h3></a> 
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
+                            </p>
+                           
+                    </div>
+                </div>
+            </div>
+            <!--card 2-->
+            <div class="col-md">
+                <div class="card bg-secondary text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-house-door"></i>
+                        </div>
+                        <a href="{% url 'mortgage-calculator' %}" ><h3 class="card-title mb-3">Mortgage Payment Calculator</h3></a> 
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
+                            </p>
+                           
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center g-4 m-3">
+
+            <!--card 3-->
+            <div class="col-md">
+                <div class="card bg-secondary text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-cash"></i>
+                        </div>
+                        <a href="{% url 'car-affordability-calculator' %}" ><h3 class="card-title mb-3">How Much Car Can I Afford?</h3></a> 
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <!--card 4-->
+            <div class="col-md">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-key"></i>
+                        </div>
+                        <a href="{% url 'home-affordability-calculator' %}" ><h3 class="card-title mb-3">How Much House Can I Afford?</h3></a> 
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center g-4 m-3">
+
+            <!--card 5-->
+            <div class="col-md ">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-cup-straw"></i>
+                        </div>
+                       <a href="#" ><h3 class="card-title mb-3">Retirement Calculator</h3></a> 
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
+                            </p>
+                           
+                    </div>
+                </div>
+            </div>
+            <!--card 6-->
+            <div class="col-md">
+                <div class="card bg-secondary text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-calculator"></i>
+                        </div>
+                        <a href="{% url 'student-loan-calculator' %}" ><h3 class="card-title mb-3">Student Loan Repayment Calculator</h3></a> 
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
+                            </p>
+                           
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

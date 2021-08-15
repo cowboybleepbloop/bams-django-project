@@ -25,6 +25,15 @@ def auto_payment_calculator(request):
     return render(request, 'flp_app/auto-payment-calculator.html', {'title': 'Auto Payment Calculator'})
 def mortgage_calculator(request): 
     return render(request, 'flp_app/mortgage-calculator.html', {'title': 'Mortgage Payment Calculator'})
+def car_affordability_calculator(request): 
+    return render(request, 'flp_app/car-affordability-calculator.html', {'title': 'Car Affordability Calculator'})
+def home_affordability_calculator(request): 
+    return render(request, 'flp_app/home-affordability-calculator.html', {'title': 'Home Affordability Calculator'})
+def student_loan_calculator(request): 
+    return render(request, 'flp_app/student-loan-calculator.html', {'title': 'Student Loan Calculator'})
+#calculator landing page
+def calculators(request): 
+    return render(request, 'flp_app/calculators.html', {'title': 'Calculators'})
 
     
 

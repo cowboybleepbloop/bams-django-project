@@ -49,9 +49,12 @@
                             Calculators
                           </a>
                           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="{% url 'auto-payment-calculator' %}">Car Payment Calculator</a></li>
+                            <li><a class="dropdown-item" href="{% url 'mortgage-calculator' %}">Mortgage Payment Calculator</a></li>
+                            <li><a class="dropdown-item" href="{% url 'car-affordability-calculator' %}">How Much Car Can I Afford?</a></li>
+                            <li><a class="dropdown-item" href="{% url 'home-affordability-calculator' %}">How Much House Can I Afford?</a></li>
+                            <li><a class="dropdown-item" href="#">Retirement Calculator</a></li>
+                            <li><a class="dropdown-item" href="{% url 'student-loan-calculator' %}">Student Loan Calculator</a></li>
                           </ul>
                           <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="{% url 'blog' %}" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -102,12 +105,12 @@
 
 
     <!--FOOTER START-->
-    <footer class="p-5 bg-dark text-white text-center position-relative">
+    <footer class="p-5 bg-light text-dark text-center position-relative">
         <div class="container">
             <div class="row align-items-center justify-content-between ">
                 <div class="col-md ">
                     <img src="{% static 'flp_app/taken.svg/' %}" class=" mx-auto d-block w-50 h-auto " alt="">
-                    <h3 class= "mt-5">Copyright &copy; 2021 BAMS</h3>
+                    <h5 class= "mt-5">Copyright &copy; 2021 BAMS</h5>
                     <a href="#">FAQ</a>
                     <a href="#">Contact</a>
                     <a href="#">Privacy Policy</a>
@@ -115,7 +118,7 @@
                     
                 </div>
                 <div class="col-md p-5 text-end">
-                    <h2>Not Financial Advice</h2>
+                    <h5>Not Financial Advice</h5>
                     
                     <p class="fs-6">The information contained on this Website and the resources available for download through this website is not intended as, and shall not be understood or construed as, financial advice. The information contained on this Website is not a substitute for financial advice from a professional who is aware of the facts and circumstances of your individual situation. We have done our best to ensure that the information provided on this Website and the resources available for download are accurate and provide valuable information. Regardless of anything to the contrary, nothing available on or through this Website should be understood as a recommendation that you should not consult with a financial professional to address your particular information.</p>
                     <a href="flp_app\disclaimer.html" class="btn btn-light mt-3"><i class="bi bi-chevron-right"></i> Read Full Disclaimer</a>
