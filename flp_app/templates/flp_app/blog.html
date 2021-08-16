@@ -19,15 +19,14 @@
         <div class="container">
 
             <div class="row g-5">
-                <div class="col-md-8">
+                <div class="col-md-7">
             
                     <article class="blog-post">
                         {% for post in posts %}
                             <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
-                                <div class="card-header">From {{ post.author }} on {{ post.date_posted|date:"F d, Y" }}</div>
+                                <div class="card-header">{{ post.date_posted|date:"F d, Y" }}</div>
                                 <div class="card-body">
-                                <h1 class="card-title">{{ post.title }}</h1>
-                                <p class="card-text">{{ post.content }}</p>
+                                <h1 class="card-title"><a href="{% url 'blog-detail' post.id %}">{{ post.title }}</a></h1>
                                 </div>
                             </div>
                         {% endfor %}

@@ -17,3 +17,6 @@ body::before {
     }
 }
 
+.navbar {
+    height: 100px;
+}

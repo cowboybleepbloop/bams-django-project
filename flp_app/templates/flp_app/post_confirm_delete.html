@@ -1,0 +1,28 @@
+{% extends "flp_app/base.html" %}
+
+
+{% block content %}
+    {% load static %}
+
+    <section>
+        <div class="container my-5 border p-3">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class='form-group'>
+                    <legend class="border-bottom my-2">
+                        Delete Post?
+                    </legend>
+                    <h2>Are you sure you want to delete this post?</h2>
+                    <h3>"{{ object.title }}"</h3>
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-danger my-2" type='submit'>Yes, Delete</button>
+                    <a class="btn btn-outline-secondary my-2" href="{% url 'blog-detail' object.id %}">Cancel</a>
+                </div>
+            </form>
+           
+         </div>
+        
+    </section>
+
+{% endblock content %}

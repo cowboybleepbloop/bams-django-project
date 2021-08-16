@@ -20,6 +20,9 @@
                 <div class="card-body">
                     <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#editModal">Edit profile</button>
                     <button class="btn btn-primary btn-sm m-1">Manage Bookmarks</button>
+                    {% if user.is_superuser %}
+                    <a href="{% url 'blog-create' %}" class="btn btn-secondary btn-sm m-1">Create Blog Post</a>
+                    {% endif %}
                 </div>
               </div>
             
