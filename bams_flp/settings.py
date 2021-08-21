@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'crispy_forms',
     'django_extensions',
+    'tinymce',
     
 
 ]
