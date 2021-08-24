@@ -20,3 +20,7 @@ body::before {
 .navbar {
     height: 100px;
 }
+
+table.mceLayout, textarea.tinyMCE {
+    width: 50% !important;
+}

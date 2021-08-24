@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_extensions',
     'tinymce',
+    'ckeditor',
     
 
 ]
@@ -160,3 +161,5 @@ GRAPH_MODELS = {
   'all_applications': True,
   'group_models': True,
 }
+
+

@@ -35,7 +35,6 @@ urlpatterns = [
     path('password-reset/confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'),
     path('profile/', user_views.profile, name='profile'),
     path('admin/', admin.site.urls),
-    path('tinymce/', include('tinymce.urls')),
     
 ] 
 

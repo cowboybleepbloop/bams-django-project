@@ -1,13 +1,18 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post, Comment
-from .forms import CommentForm
+from django.contrib.auth.decorators import login_required
+from .models import Post, Bookmark
+
 
 # Create your views here.
 
 
 #function based views
+
+
 def index(request):
     return render(request, 'flp_app/index.html', {'title': 'Home'} )
 
@@ -16,8 +21,50 @@ def disclaimer(request):
 
 def blog(request): 
     context = { 'posts': Post.objects.all()}
-    
     return render(request, 'flp_app/blog.html', context)
+
+
+def FavoriteView(request,pk):
+    post = Post.objects.get(id=pk)
+    favorited = False
+    if post.favorite.filter(id=request.user.id).exists():
+        post.favorite.remove(request.user)
+        messages.success(request, f'Removed favorite') #to display the success message
+        favorited = False
+    else:
+     post.favorite.add(request.user) 
+     favorited = True
+     messages.success(request, f'Added to favorites') #to display the success message
+    return HttpResponseRedirect(reverse('blog-detail', args=[str(pk)]))
+
+@login_required
+def bookmark(request, pk):
+    user = request.user
+    post = get_object_or_404(Post, id=pk)
+    
+    try: 
+        b, created = Bookmark.objects.get_or_create(user=user)
+        if b.posts.filter(id=pk).exists():
+            b.posts.remove(post)
+            messages.success(request, f'Removed favorite') #to display the success message
+        else:
+            b.posts.add(post)
+            messages.success(request, f'Added to favorites') #to display the success message
+        return HttpResponseRedirect(reverse('blog-detail', args=[str(pk)]))
+    except Exception as e:
+        raise e
+
+@login_required
+def BookmarkList(request):
+    
+    bookmark_list = Bookmark.objects.get(user=request.user)
+
+    context = {
+        'bookmark_list': bookmark_list,
+    }
+
+    return render(request, 'flp_app/bookmark-list.html', context)
+
 
 
 #calculator views
@@ -39,8 +86,6 @@ def calculators(request):
 
 #class based views
 
-#class CommentListView(ListView):
-
 class PostListView(ListView):
     model = Post
     template_name = 'flp_app/blog.html'
@@ -50,7 +95,7 @@ class PostListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
- 
+
 
 class PostCreateView(CreateView):
     model = Post
@@ -67,28 +112,5 @@ class PostDeleteView(DeleteView):
     success_url = '/'
 
 
-    #model = Comment
 
-#def comment_detail(request, slug):
- #   template_name = 'comments.html'
-  #  post = get_object_or_404(Post, slug=slug)
-   # comments = post.comments.filter(active=True)
-    #new_comment = None
-    # Comment posted
-    #if request.method == 'POST':
-     #   comment_form = CommentForm(data=request.POST)
-      #  if comment_form.is_valid():
 
-            # Create Comment object but don't save to database yet
-       #     new_comment = comment_form.save(commit=False)
-            # Assign the current post to the comment
-        #    new_comment.post = post
-            # Save the comment to the database
-         #   new_comment.save()
-    #else:
-     #  comment_form = CommentForm()
-
-    #return render(request, template_name, {'post': post,
-     #                                      'comments': comments,
-      #                                     'new_comment': new_comment,
-       #                                   'comment_form': comment_form})

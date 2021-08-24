@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
+
 # Create your views here.
 def register(request):
     if request.method == 'POST': #checks to see if http post request
@@ -35,6 +36,5 @@ def profile(request):
         'u_form': u_form,
         'p_form': p_form
     }
-
     return render(request, 'users/profile.html', context)
 
