@@ -135,6 +135,8 @@ USE_TZ = True
 
 STATIC_URL = '/flp_app/static/flp_app/' #location of static files
 
+
+
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media') #defines the media root inside of the base directory in a sub directory called media
 MEDIA_URL = '/media/' # this is how to access media within the browser
 

@@ -3,109 +3,65 @@
 {% block content %}
     {% load static %}
 
-<section class="p-5">
-    <div class="container">
-        <div class="row text-center g-4 m-3">
 
-            <!--card 1-->
-            <div class="col-md ">
-                <div class="card bg-dark text-light">
-                    <div class="card-body text-center">
-                        <div class="h1 mb-3">
-                            <i class="bi bi-wallet2"></i>
-                        </div>
-                       <a href="{% url 'auto-payment-calculator' %}" ><h3 class="card-title mb-3">Car Payment Calculator</h3></a> 
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
-                            </p>
-                           
-                    </div>
-                </div>
+        <div class="mt-5">
+        <div class="container py-4 ">
+      
+          <div class="p-5 my-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">What will my car payment be?</h1>
+              <p class="col-md-8 fs-4">Let us know the price of the car you're looking at. If you have a trade in, we'll take that into account too and tell you what you could be looking at for a monthly payment.</p>
+              <a href="{% url 'auto-payment-calculator' %}" ><button class="btn btn-primary btn-lg" type="button">Car Payment Calculator</button></a>
             </div>
-            <!--card 2-->
-            <div class="col-md">
-                <div class="card bg-secondary text-light">
-                    <div class="card-body text-center">
-                        <div class="h1 mb-3">
-                            <i class="bi bi-house-door"></i>
-                        </div>
-                        <a href="{% url 'mortgage-calculator' %}" ><h3 class="card-title mb-3">Mortgage Payment Calculator</h3></a> 
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
-                            </p>
-                           
-                    </div>
-                </div>
+          </div>
+      
+          <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+              <div class="h-100 p-5 text-white bg-dark rounded-3">
+                <h2>What will my house payment be?</h2>
+                <p>Ready to start looking at houses or just want to start planning? In just a couple quick questions, we can tell you what your monthly mortgage payment could be.</p>
+                <a href="{% url 'mortgage-calculator' %}"><button class="btn btn-outline-light" type="button">Mortgage Payment Calculator</button></a>
+              </div>
             </div>
+            <div class="col-md-6">
+              <div class="h-100 p-5 bg-light border rounded-3">
+                <h2>Retirement Calculator in progress</h2>
+                <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+                <button class="btn btn-outline-secondary" type="button">Retirement Savings Calculator</button>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 my-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">How much house can I afford?</h1>
+              <p class="col-md-8 fs-4">Let us know what your target payment is and we will give you a target home price to look at as you begin your search.</p>
+              <a href="{% url 'home-affordability-calculator' %}"><button class="btn btn-primary btn-lg" type="button">Home Price Calculator</button></a>
+            </div>
+          </div>
+      
+          <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+              <div class="h-100 p-5 text-white bg-dark rounded-3">
+                <h2>How much car can I afford?</h2>
+                <p>How much do you want to pay per month? Have a down payment or trade in? We'll let you know if you can afford that Tesla.</p>
+                <button class="btn btn-outline-light" type="button">Car Affordability Calculator</button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="h-100 p-5 bg-light border rounded-3">
+                <h2>What will my student loan payments be?</h2>
+                <p>Graduating? Congrats! Except now it's time to pay back the loans...We can help give an idea what those payments will be.</p>
+                <a href="{% url 'student-loan-calculator' %}"><button class="btn btn-outline-secondary" type="button">Student Loan Repayment Calculator</button></a>
+              </div>
+            </div>
+          </div>
+      
+         
         </div>
-
-        <div class="row text-center g-4 m-3">
-
-            <!--card 3-->
-            <div class="col-md">
-                <div class="card bg-secondary text-light">
-                    <div class="card-body text-center">
-                        <div class="h1 mb-3">
-                            <i class="bi bi-cash"></i>
-                        </div>
-                        <a href="{% url 'car-affordability-calculator' %}" ><h3 class="card-title mb-3">How Much Car Can I Afford?</h3></a> 
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
-                            </p>
-                    </div>
-                </div>
-            </div>
-            <!--card 4-->
-            <div class="col-md">
-                <div class="card bg-dark text-light">
-                    <div class="card-body text-center">
-                        <div class="h1 mb-3">
-                            <i class="bi bi-key"></i>
-                        </div>
-                        <a href="{% url 'home-affordability-calculator' %}" ><h3 class="card-title mb-3">How Much House Can I Afford?</h3></a> 
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
-                            </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row text-center g-4 m-3">
-
-            <!--card 5-->
-            <div class="col-md ">
-                <div class="card bg-dark text-light">
-                    <div class="card-body text-center">
-                        <div class="h1 mb-3">
-                            <i class="bi bi-cup-straw"></i>
-                        </div>
-                       <a href="#" ><h3 class="card-title mb-3">Retirement Calculator</h3></a> 
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
-                            </p>
-                           
-                    </div>
-                </div>
-            </div>
-            <!--card 6-->
-            <div class="col-md">
-                <div class="card bg-secondary text-light">
-                    <div class="card-body text-center">
-                        <div class="h1 mb-3">
-                            <i class="bi bi-calculator"></i>
-                        </div>
-                        <a href="{% url 'student-loan-calculator' %}" ><h3 class="card-title mb-3">Student Loan Repayment Calculator</h3></a> 
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
-                            </p>
-                           
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
-</section>
+
+    
+
+
 
 {% endblock content %}
