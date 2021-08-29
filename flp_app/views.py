@@ -83,6 +83,25 @@ def calculators(request):
     return render(request, 'flp_app/calculators.html', {'title': 'Calculators'})
 
     
+#ranking views
+def car_insurance_ranking(request): 
+    return render(request, 'flp_app/car-insurance.html', {'title': 'Car Insurance Ranking'})
+def renters_insurance_ranking(request): 
+    return render(request, 'flp_app/renters-insurance.html', {'title': 'Renters Insurance Ranking'})
+def student_loans_ranking(request): 
+    return render(request, 'flp_app/student-loans.html', {'title': 'Student Loans Ranking'})
+def travel_card_ranking(request): 
+    return render(request, 'flp_app/travel-cards.html', {'title': 'Best Travel Credit Cards'})
+def student_card_ranking(request): 
+    return render(request, 'flp_app/student-cards.html', {'title': 'Best Student Credit Cards'})
+def rewards_card_ranking(request): 
+    return render(request, 'flp_app/rewards-cards.html', {'title': 'Best Rewards Credit Cards'})
+def badcredit_card_ranking(request): 
+    return render(request, 'flp_app/badcredit-cards.html', {'title': 'Best Bad or No Credit Cards'})
+#credit card compare landing page
+def credit_card_rankings(request): 
+    return render(request, 'flp_app/credit-card-ranking.html', {'title': 'Compare Credit Cards'})
+
 
 #class based views
 

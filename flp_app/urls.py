@@ -22,5 +22,13 @@ urlpatterns = [
     path('car-affordability-calculator/', views.car_affordability_calculator, name='car-affordability-calculator'),
     path('home-affordability-calculator/', views.home_affordability_calculator, name='home-affordability-calculator'),
     path('student-loan-calculator/', views.student_loan_calculator, name='student-loan-calculator'),
+    path('travel-cards/', views.travel_card_ranking, name='travel-cards'),
+    path('student-cards/', views.student_card_ranking, name='student-cards'),
+    path('rewards-cards/', views.rewards_card_ranking, name='rewards-cards'),
+    path('badcredit-cards/', views.badcredit_card_ranking, name='badcredit-cards'),
+    path('credit-card-ranking/', views.credit_card_rankings, name='credit-cards-ranking'),
+    path('car-insurance/', views.car_insurance_ranking, name='car-insurance'),
+    path('renters-insurance/', views.renters_insurance_ranking, name='renters-insurance'),
+    path('student-loans/', views.student_loans_ranking, name='student-loans'),
 ]
  

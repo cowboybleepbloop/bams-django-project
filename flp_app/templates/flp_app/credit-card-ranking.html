@@ -1,0 +1,61 @@
+{% extends "flp_app/base.html" %}
+
+{% block content %}
+    {% load static %}
+
+    <!--THIS IS THE LANDING PAGE FOR CREDIT CARD RANKINGS-->
+        <div class="mt-5">
+        <div class="container py-4 ">
+      
+          <div class="p-5 my-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">Why compare credit cards?</h1>
+              <p class="col-md-8 fs-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam modi sapiente dignissimos mollitia soluta blanditiis suscipit perspiciatis consequuntur doloremque optio dicta iure, deleniti corporis recusandae ullam officia qui totam hic?</p>
+            </div>
+          </div>
+      
+          <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+              <div class="h-100 p-5 text-white bg-dark rounded-3">
+                <h2>Credit Cards for Travel</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est earum, distinctio laboriosam inventore eligendi animi fugit similique sed error autem.</p>
+                <a href="{% url 'travel-cards' %}"><button class="btn btn-outline-light" type="button">View our rankings</button></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="h-100 p-5 bg-light border rounded-3">
+                <h2>Credit Cards for Students</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit minus distinctio accusantium saepe ullam porro provident, molestias molestiae nobis eos.</p>
+                <a href="{% url 'student-cards' %}"><button class="btn btn-outline-secondary" type="button">View our rankings</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-md-stretch mt-4">
+            <div class="col-md-6">
+              <div class="h-100 p-5 bg-light rounded-3">
+                <h2>Credit Cards for Rewards and Cash Back</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nam omnis, accusantium illum repellat in rerum quidem tenetur doloribus totam!</p>
+                <a href="{% url 'rewards-cards' %}"><button class="btn btn-outline-secondary" type="button">View our rankings</button></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="h-100 p-5 text-white bg-primary border rounded-3">
+                <h2>Credit Cards for Bad Credit and No Credit</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel saepe mollitia molestiae qui sunt adipisci illum consequatur odio! Officia, inventore.</p>
+                <a href="{% url 'badcredit-cards' %}"><button class="btn btn-outline-light" type="button">View our rankings</button></a>
+              </div>
+            </div>
+          </div>
+
+
+         
+      
+         
+        </div>
+    </div>
+
+    
+
+
+
+{% endblock content %}
