@@ -41,7 +41,7 @@
                           </a>
                           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a class="dropdown-item" href="{% url 'credit-cards-ranking' %}">Credit Cards</a></li>
-                            <li><a class="dropdown-item" href="#">Checking and Savings Accounts</a></li>
+                            <li><a class="dropdown-item" href="{% url 'bank-accounts' %}">Checking and Savings Accounts</a></li>
                             <li><a class="dropdown-item" href="{% url 'car-insurance' %}">Car Insurance</a></li>
                             <li><a class="dropdown-item" href="{% url 'renters-insurance' %}">Renter's Insurance</a></li>
                             <li><a class="dropdown-item" href="{% url 'student-loans' %}">Student Loans</a></li>
@@ -64,11 +64,11 @@
                                 Blog
                               </a>
                               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Spending and Savings</a></li>
-                                <li><a class="dropdown-item" href="#">Credit Cards and Loans</a></li>
-                                <li><a class="dropdown-item" href="#">Investment and Retirement</a></li>
-                                <li><a class="dropdown-item" href="#">Banking</a></li>
-                                <li><a class="dropdown-item" href="#">Tips, Tricks, and Advice</a></li>
+                                <li><a class="dropdown-item" href="{% url 'spendsave-posts' %}">Spending and Savings</a></li>
+                                <li><a class="dropdown-item" href="{% url 'loans-posts' %}">Credit Cards and Loans</a></li>
+                                <li><a class="dropdown-item" href="{% url 'investment-posts' %}">Investment and Retirement</a></li>
+                                <li><a class="dropdown-item" href="{% url 'banking-posts' %}">Banking</a></li>
+                                <li><a class="dropdown-item" href="{% url 'tips-posts' %}">Tips, Tricks, and Advice</a></li>
                               </ul>
                         </li>
                         {% if user.is_authenticated%}

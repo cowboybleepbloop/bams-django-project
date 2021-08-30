@@ -23,6 +23,28 @@ def blog(request):
     context = { 'posts': Post.objects.all()}
     return render(request, 'flp_app/blog.html', context)
 
+def banking_category(request): 
+    context = { 'posts': Post.objects.all()}
+    return render(request, 'flp_app/banking-category.html', context)
+
+def spendsave_category(request): 
+    context = { 'posts': Post.objects.all()}
+    return render(request, 'flp_app/spend-save-category.html', context)
+
+def loans_category(request): 
+    context = { 'posts': Post.objects.all()}
+    return render(request, 'flp_app/cc-loans-category.html', context)
+
+def investment_category(request): 
+    context = { 'posts': Post.objects.all()}
+    return render(request, 'flp_app/investment-retirement-category.html', context)
+
+def tips_category(request): 
+    context = { 'posts': Post.objects.all()}
+    return render(request, 'flp_app/tips-category.html', context)
+
+
+
 
 def FavoriteView(request,pk):
     post = Post.objects.get(id=pk)
@@ -84,6 +106,8 @@ def calculators(request):
 
     
 #ranking views
+def bank_account_ranking(request): 
+    return render(request, 'flp_app/bank-account-ranking.html', {'title': 'Bank Account Ranking'})
 def car_insurance_ranking(request): 
     return render(request, 'flp_app/car-insurance.html', {'title': 'Car Insurance Ranking'})
 def renters_insurance_ranking(request): 
@@ -131,5 +155,11 @@ class PostDeleteView(DeleteView):
     success_url = '/'
 
 
+#class BankingCategoryListView(ListView):
+ #   model = Post
+  #  template_name = 'flp_app/banking-category.html'
+
+   # def get_queryset(self):
+    #    return Post.objects.filter(category=self.kwargs.get('pk'))
 
 

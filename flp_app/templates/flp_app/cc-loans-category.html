@@ -1,0 +1,127 @@
+{% extends "flp_app/base.html" %}
+
+{% block content %}
+    {% load static %}
+
+    <header>
+        <section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+        <div class="container">
+        <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark display-4 text-center">
+            <h1>Credit Cards and Loans Blog</h1>
+        </div>
+        </div>
+    </section>
+    </header>
+
+
+    <!--Main Content Begin-->
+    <section>
+        <div class="container">
+
+            <div class="row g-5">
+                <div class="col-md-7">
+            
+                    <article class="blog-post">
+                        {% for post in posts %}
+                        {% if post.category == "Credit Cards and Loans" %}
+                            <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
+                                <div class="card-header">{{ post.date_posted|date:"F d, Y" }}</div>
+                                <div class="card-body">
+                                <h1 class="card-title"><a href="{% url 'blog-detail' post.id %}">{{ post.title }}</a></h1>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+
+                </div>
+
+    <!--Sidebar-->
+
+                <div class="col-md-4 mb-2 d-none d-lg-block">
+              
+                    <div class="flex-shrink-0 p-3 bg-light border h-100" style="width: 280px;">
+                        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                        <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+                        <span class="fs-5 fw-semibold">Explore Our Most Popular Posts</span>
+                        </a>
+                        <ul class="list-unstyled ps-0">
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#spend-collapse" aria-expanded="true">
+                            Spending and Saving
+                            </button>
+                            <div class="collapse" id="spend-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">Overview</a></li>
+                                <li><a href="#" class="link-dark rounded">Updates</a></li>
+                                <li><a href="#" class="link-dark rounded">Reports</a></li>
+                            </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#loan-collapse" aria-expanded="false">
+                            Credit Cards and Loans
+                            </button>
+                            <div class="collapse" id="loan-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">Overview</a></li>
+                                <li><a href="#" class="link-dark rounded">Weekly</a></li>
+                                <li><a href="#" class="link-dark rounded">Monthly</a></li>
+                                <li><a href="#" class="link-dark rounded">Annually</a></li>
+                            </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#invest-collapse" aria-expanded="false">
+                            Investment and Retirement
+                            </button>
+                            <div class="collapse" id="invest-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">New</a></li>
+                                <li><a href="#" class="link-dark rounded">Processed</a></li>
+                                <li><a href="#" class="link-dark rounded">Shipped</a></li>
+                                <li><a href="#" class="link-dark rounded">Returned</a></li>
+                            </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#bank-collapse" aria-expanded="false">
+                            Banking
+                            </button>
+                            <div class="collapse" id="bank-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">New</a></li>
+                                <li><a href="#" class="link-dark rounded">Processed</a></li>
+                                <li><a href="#" class="link-dark rounded">Shipped</a></li>
+                                <li><a href="#" class="link-dark rounded">Returned</a></li>
+                            </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tips-collapse" aria-expanded="false">
+                            Tips, Tricks, and Advice
+                            </button>
+                            <div class="collapse" id="tips-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">New</a></li>
+                                <li><a href="#" class="link-dark rounded">Processed</a></li>
+                                <li><a href="#" class="link-dark rounded">Shipped</a></li>
+                                <li><a href="#" class="link-dark rounded">Returned</a></li>
+                            </ul>
+                            </div>
+                        </li>
+                        <li class="border-top my-3"></li>
+                        </ul>
+                    </div>
+    
+                    </div>    
+                
+            
+                    </div>
+                    </div>
+            
+                
+                    
+     
+    </section>
+
+{% endblock content %}
