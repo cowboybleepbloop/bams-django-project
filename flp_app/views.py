@@ -16,6 +16,13 @@ from .models import Post, Bookmark
 def index(request):
     return render(request, 'flp_app/index.html', {'title': 'Home'} )
 
+def privacy_policy(request):
+    return render(request, 'flp_app/privacy-policy.html', {'title': 'Privacy Policy'} )
+
+def tos(request):
+    return render(request, 'flp_app/tos.html', {'title': 'Terms of Service'} )
+
+
 def disclaimer(request): 
     return render(request, 'flp_app/disclaimer.html', {'title': 'Disclaimer'})
 

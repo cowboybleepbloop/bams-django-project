@@ -7,6 +7,8 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('disclaimer/', views.disclaimer, name='disclaimer'),
+    path('privacy-policy/', views.privacy_policy, name='privacy-policy'),
+    path('terms-of-service/', views.tos, name='tos'),
     path('blog/', PostListView.as_view(), name='blog'),
     path('blog/<int:pk>/', PostDetailView.as_view(), name='blog-detail'),
     

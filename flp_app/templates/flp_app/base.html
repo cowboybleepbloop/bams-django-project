@@ -29,7 +29,7 @@
     <!--NAVBAR BEGIN-->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark  fixed-top">
         <div class="container"> 
-            <a href="{% url 'index' %}" class="navbar-brand mh-20"><img src="{% static 'flp_app/BAMS LOGO1.png/' %}" alt="bams logo" style="height: 75px;"></a>
+            <a href="{% url 'index' %}" class="navbar-brand mh-20"><img src="{% static 'flp_app/bams 3d.png/' %}" alt="bams logo" style="height: 75px;"></a>
             <!--This button collapses nav elements into hamburger button below md screen size-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span></button>
             
@@ -113,16 +113,16 @@
 
 
     <!--FOOTER START-->
-    <footer class="p-5 bg-light text-dark text-center position-relative ">
+    <footer class="p-5 bg-dark text-light text-center position-relative ">
         <div class="container border-top">
             <div class="row align-items-center justify-content-between mt-4">
                 <div class="col-md ">
-                    <img src="{% static 'flp_app/taken.svg/' %}" class=" mx-auto d-block" style="height: 200px;" alt="">
+                    <img src="{% static 'flp_app/Alien_Flatline.svg/' %}" class=" mx-auto d-block" style="height: 200px;" alt="">
                     <h5 class= "mt-5">Copyright &copy; 2021 BAMS</h5>
                     <a href="#">FAQ</a>
                     <a href="#">Contact</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
+                    <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                    <a href="{% url 'tos' %}">Terms of Service</a>
                     
                 </div>
                 <div class="col-md p-5 text-end">

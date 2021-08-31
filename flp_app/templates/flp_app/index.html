@@ -3,6 +3,7 @@
 
 {% block content %}
     {% load static %}
+
     <!--SHOWCASE BEGIN-->
     <section class="bg-dark text-light mt-5 p-5 p-lg-0 pt-lg-5 text-center text-sm-start ">
         <div class="container mt-5">
@@ -10,20 +11,21 @@
                 <div>
                     <h1>Reach Your Finance Goals</h1>
                     <p class="lead my-5">Relevant, easy-to-access information. <br> No advertisements. No sponsorships. No Bull.</p>
-                   <a href="{% url 'register' %}"><button class="btn-primary btn-lg">Join the Movement</button></a>  <!--need to look up CTAs-->
+                   <a href="{% url 'register' %}"><button class="btn-secondary btn-lg">Join the Movement</button></a>  <!--need to look up CTAs-->
                 </div>
-                <img class="img-fluid w-50 d-none d-sm-block" src="{% static 'flp_app/showcase.svg/' %}" alt="rocketship"/>
+                <img class="img-fluid w-50 d-none d-sm-block" src="{% static 'flp_app/Rocket Boy_Flatline.svg/' %}" alt="rocketship"/>
             </div>
         </div>
     </section>
     <!--SHOWCASE END-->
 
+    
 
     <!--NEWSLETTER BEGIN-->
     <section class="bg-primary text-light p-5">
         <div class="container">
             <div class="d-md-flex justify-content-between align-items-center">
-                <h3 class="mb-3 mb-md-0">Get our blog posts direct to your inbox</h3>
+                <h3 class="mb-3 mb-md-0 text-dark">Get our blog posts direct to your inbox</h3>
 
                 <div class="input-group news-input">
                     <input type="text" class="form-control" placeholder="Enter Email" aria-label="Recipient's email" aria-describedby="button-addon2">
@@ -51,7 +53,7 @@
                                 <p class="card-text">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
                                 </p>
-                               <a href="{% url 'credit-cards-ranking' %}" class="btn btn-primary">See Our Credit Card Rankings</a> 
+                               <a href="{% url 'credit-cards-ranking' %}" class="btn btn-outline-primary">See Our Credit Card Rankings</a> 
                         </div>
                     </div>
                 </div>
@@ -66,7 +68,7 @@
                                 <p class="card-text">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
                                 </p>
-                               <a href="{% url 'calculators' %}" class="btn btn-primary">Try Out Our Calculators</a> 
+                               <a href="{% url 'calculators' %}" class="btn btn-outline-primary">Try Out Our Calculators</a> 
                         </div>
                     </div>
                 </div>
@@ -81,7 +83,7 @@
                                 <p class="card-text">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
                                 </p>
-                               <a href="{% url 'blog' %}" class="btn btn-primary">Read Our Blog</a> 
+                               <a href="{% url 'blog' %}" class="btn btn-outline-primary">Read Our Blog</a> 
                         </div>
                     </div>
                 </div>
@@ -95,7 +97,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-md">
-                    <img src="{% static 'flp_app/decide.svg/' %}" class="img-fluid" alt="">
+                    <img src="{% static 'flp_app/Piggy bank_Flatline.svg/' %}" class="img-fluid" alt="">
                 </div>
                 <div class="col-md p-5">
                     <h2>Lorem ipsum dolor sit amet.</h2>
@@ -122,7 +124,7 @@
                     <a href="#" class="btn btn-light mt-3"><i class="bi bi-chevron-right"></i> Read More</a>
                 </div>
                 <div class="col-md">
-                    <img src="{% static 'flp_app/growing.svg/' %}" class="img-fluid" alt="">
+                    <img src="{% static 'flp_app/Wallet_Flatline.svg/' %}" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
