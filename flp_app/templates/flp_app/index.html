@@ -51,9 +51,9 @@
                             </div>
                             <h3 class="card-title mb-3">Our Picks For You</h3>
                                 <p class="card-text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
+                                    We've searched the internet high and low to find the best of the best.
                                 </p>
-                               <a href="{% url 'credit-cards-ranking' %}" class="btn btn-outline-primary">See Our Credit Card Rankings</a> 
+                               <a href="{% url 'credit-cards-ranking' %}" class="btn btn-outline-primary">See Our Rankings</a> 
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                             </div>
                             <h3 class="card-title mb-3">Stay on Track</h3>
                                 <p class="card-text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
+                                    See where you stand in seconds. Get insights before making your next big purchase.
                                 </p>
                                <a href="{% url 'calculators' %}" class="btn btn-outline-primary">Try Out Our Calculators</a> 
                         </div>
@@ -81,7 +81,7 @@
                             </div>
                             <h3 class="card-title mb-3">Get Tips and Tricks</h3>
                                 <p class="card-text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas ad id laborum exercitationem tempore.
+                                    Just stuff that matters with no extra fluff. Learn about money in a straight to the point way.
                                 </p>
                                <a href="{% url 'blog' %}" class="btn btn-outline-primary">Read Our Blog</a> 
                         </div>
@@ -100,12 +100,12 @@
                     <img src="{% static 'flp_app/Piggy bank_Flatline.svg/' %}" class="img-fluid" alt="">
                 </div>
                 <div class="col-md p-5">
-                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <h2>We're calling you out.</h2>
                     <p class="lead">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero vitae debitis esse tenetur incidunt quas.
+                        Moving a set amount of each paycheck into a savings account is the most popular way to budget but only 35% of Gen Z use this method.
                     </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, ea voluptas! Eum, suscipit! Harum nulla sint reiciendis maiores perspiciatis. Officiis distinctio minima nemo fugit voluptatibus iusto. Repudiandae labore cumque quis!</p>
-                    <a href="#" class="btn btn-light mt-3"><i class="bi bi-chevron-right"></i> Read More</a>
+                    <p>Saving doesn't have to be hard or even something you think about. Even if it's just a couple of dollars, your future self will thank you. Read a few tips and options to save and grow your money.</p>
+                    <a href="{% url 'spendsave-posts' %}" class="btn btn-light mt-3"><i class="bi bi-chevron-right"></i> Savings Blog</a>
                 </div>
             </div>
         </div>
@@ -209,7 +209,7 @@
     <section id="team" class="p-5 bg-primary">
      <div class="container">
         <h2 class="text-center text-white">Meet the Team</h2>
-        <p class="lead text-center text-white mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, deserunt?</p>
+        <p class="lead text-center text-white mb-5">Not financial advisors, just developers that may or may not know what we're doing.</p>
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
                 <div class="card bg-light rounded-3">
