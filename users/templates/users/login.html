@@ -4,15 +4,23 @@
 {% block content %}
     {% load static %}
 
-    <section class='bg-dark text-light'>
+    <header>
+        <section class="bg-dark text-light mt-4 p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
         <div class="container">
-            <div class="w-100 align-items-center">
+        <div class="p-4 p-md-5text-white rounded bg-dark display-4 text-center">
+            <h1>Login</h1>
+        </div>
+        </div>
+    </section>
+    </header>
+
+    <section class='bg-dark text-light '>
+        <div class="container">
+            <div class="w-100 align-items-center ">
                 <form method="POST">
                                 {% csrf_token %}
                                 <fieldset class='form-group'>
-                                    <legend class="border-bottom mb-4">
-                                        Login
-                                    </legend>
+                                  
                                     {{ form|crispy }}
                                 </fieldset>
                                 <div class="form-group">
