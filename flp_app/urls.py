@@ -1,11 +1,12 @@
-from django.urls import path, include
-from .views import BookmarkList, PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
+from django.urls import path
+from .views import  PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
 from django.contrib.admin.views.decorators import staff_member_required
 from . import views
 
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('contact-us/', views.contact, name='contact-us'),
     path('disclaimer/', views.disclaimer, name='disclaimer'),
     path('privacy-policy/', views.privacy_policy, name='privacy-policy'),
     path('terms-of-service/', views.tos, name='tos'),
@@ -33,6 +34,7 @@ urlpatterns = [
     path('car-affordability-calculator/', views.car_affordability_calculator, name='car-affordability-calculator'),
     path('home-affordability-calculator/', views.home_affordability_calculator, name='home-affordability-calculator'),
     path('student-loan-calculator/', views.student_loan_calculator, name='student-loan-calculator'),
+    path('retirement-calculator/', views.retirement_calculator, name='retirement-calculator'),
     path('travel-cards/', views.travel_card_ranking, name='travel-cards'),
     path('student-cards/', views.student_card_ranking, name='student-cards'),
     path('rewards-cards/', views.rewards_card_ranking, name='rewards-cards'),

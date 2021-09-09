@@ -9,61 +9,88 @@
     <!--CALCULATOR BEGIN-->
     <section class="bg-light text-dark mt-5 p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
             <div class="container">
-            <div class="col-md-12 paymentCalc">
+            <div class="col-md-12">
             <div class="row align-items-center justify-content-between">
             <h1 class="text-center mt-5">Retirement Calculator</h1>
+            <div class="card my-3">
+              <div class="card-body">
+              <h5 class="card-title text-dark">Are you on track for retirement?</h5>
+              <p class="card-text text-dark">It feels far away but it is coming. The earlier you can start saving the better. Even if it's just a little.Try playing around with the age input to see how much it affects your projected savings. This calculator assumes you aren't investing your savings but we highly highly recommend that you do. Learn more about saving for retirement on our blog.
+              </p>
+              <a href="{% url 'blog-detail' 9 %}" class="btn btn-primary d-inline">The rundown on saving for retirement</a>
+              </div>
+          </div>
             <div class="col-md-6">
             
                 <form id="loanCalc" action="" method="get" class="">
-                <div class="col-md-6">
-                    
+
+                <div class="col-md-6 my-3">
                     <div class="form-group">
-                    <label for="targetPayment">Target Monthly Payment</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="targetPayment" placeholder="Target Monthly Payment">
+                    <label for="targetPayment">How old are you?</label>
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="currentAge" placeholder="Current Age">
                     </div>
                 </div>
-                     <div class="col-md-6">
+
+                  <div class="col-md-6 my-3">
                     <div class="form-group">
-                    <label for="intRate">Interest Rate</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="intRate" placeholder="Interest Rate" value="3.25">
+                    <label for="intRate">How much do you make per year?</label>
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="currentSalary" placeholder="Yearly Salary">
                     </div>
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-6 my-3">
                     <div class="form-group">
-                    <label for="loanTerm">Loan Term</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="loanTerm" placeholder="Loan Term (ex: 36 Months)">
+                    <label for="loanTerm">How much are you saving monthly toward your retirement?</label>
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="monthlySavings" placeholder="Monthly Savings" value="0">
                     </div>
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-6 my-3">
                     <div class="form-group">
-                    <label for="downPayment">Down Payment</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="downPayment" placeholder="Down Payment" value="0">
+                    <label for="downPayment">How much do you currently have saved toward retirement?</label>
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="currentSavings" placeholder="Current Savings" value="0">
                     </div>
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-6 my-3">
+                  <div class="form-group">
+                  <label for="downPayment">How much do you expect to spend monthly during retirement?</label>
+                  <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="retirementSpending" placeholder="Monthly Retirement Spanding" value="2500">
+                  </div>
+              </div>
+
+                <div class="col-md-6 my-3">
                     <div class="form-group">
-                    <label for="tradeValue">Trade In Value</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="tradeValue" placeholder="Trade In Value" value="0">
+                    <label for="tradeValue">What age would you like to retire?</label>
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="retirementAge" placeholder="Retirement Age" value="65">
                     </div>
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-6 my-3">
                     <div class="form-group">
-                    <label for="tradeValue">Amount Owed on Trade</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="tradeOwed" placeholder="Amount Owed on Trade In" value="0">
+                    <label for="tradeValue">What age do you expect to live to?</label>
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="lifeExpectancy" placeholder="Life Expectancy" value="90">
                     </div>
                 </div>
+
+                <div class="col-md-6 my-3">
+                  <div class="form-group">
+                  <label for="downPayment">Have any other expected monthly income?</label>
+                  <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="otherExpectedIncome" placeholder="Other Expected Monthly Income" value="0">
+                  </div>
+              </div>
            
                 <div class="clearfix"></div>
                 <div class="col-md-12">
-                    <a href="#" class="btn btn-secondary my-3" onclick="calculateLoanAmount()" id="calculate" value="Calulate">Calculate</a>
+                    <a href="#" class="btn btn-secondary my-3" onclick="calculateRetirement()" id="calculate" value="Calulate">Calculate</a>
                 </div>
+
                 </form>
             </div>
         
             <div class="col-md-6 border">
-                <div id="paymentResults">
-            
-                </div>
+                <div id="totalNeededToRetire"></div>
+                <div id="totalSavedAtRetirement"></div>
             </div>
             </div>
             
@@ -74,77 +101,125 @@
 
    <!--JS FUNCTION BEGIN-->
   <script>
-    function calculateLoanAmount(){
-  var targetPayment = document.getElementById('targetPayment').value,
-      loanTerm = document.getElementById('loanTerm').value,
-      intRate = document.getElementById('intRate').value,
-      downPayment = document.getElementById('downPayment').value,
-      tradeValue = document.getElementById('tradeValue').value,
-      tradeOwed = document.getElementById('tradeOwed').value,
-      amount = parseInt(targetPayment),
-      months = parseInt(loanTerm),
-      down  = parseInt(downPayment),
-      trade =  parseInt(tradeValue),
-      totalDown  = down + trade - tradeOwed,
-      interest = parseFloat(intRate)*.01
-      monInt = interest/12
-      negLoanTerm = loanTerm*-1
-      negMonInt = monInt*-1;
+      function calculateRetirement(){
+        /*get the data from the form*/
+          var current_age = document.getElementById('currentAge').value;
+          var current_salary = document.getElementById('currentSalary').value;
+          var amount_saved_monthly = document.getElementById('monthlySavings').value;
+          var current_savings = document.getElementById('currentSavings').value;
+          var retirement_age = document.getElementById('retirementAge').value;
+          var monthly_spending = document.getElementById('retirementSpending').value;
+          var life_expectancy = document.getElementById('lifeExpectancy').value;
+          var other_expected_income = document.getElementById('otherExpectedIncome').value;
+          /*parse ints*/
+          var age = parseInt(current_age)
+          var salary = parseInt(current_salary)
+          var monthly = parseInt(amount_saved_monthly)
+          var savings  = parseInt(current_savings)
+          var retire_age =  parseInt(retirement_age)
+          var spending = parseInt(monthly_spending)
+          var life = parseInt(life_expectancy)
+          var other = parseInt(other_expected_income)
+          /*a few precalculations*/
+          var adjusted_savings = 0;
+          var years_to_retire = life-age;
+          var months_to_retire = years_to_retire * 12;
+          var retirement_duration = life - retire_age;
+          var other_expected_at_retirement = other * months_to_retire;
+          var monthly_salary = salary / 12;
+          var income_percent_saved_monthly = (monthly * 100) / monthly_salary;
+          console.log(income_percent_saved_monthly);
+          var income_percent_saved_monthly_decimal = income_percent_saved_monthly * .01;
+          console.log(income_percent_saved_monthly_decimal);
 
+          /*form control*/
+          if(!age){
+              alert('Please fill in all fields');
+              return;
+            }
 
+            if(!salary){
+              alert('Please fill in all fields');
+              return;
+            }
 
-      console.log(negLoanTerm);
+            if(!monthly){
+              monthly = 0;
+              amount_saved_monthly = document.getElementById('monthlySavings').value = '0';
+            }
 
-      if(!amount){
-        alert('Please fill in all fields');
-        return;
+            if(!savings){
+              savings = 0;
+              current_savings = document.getElementById('currentSavings').value = '0';
+            }
+
+            if(!retire_age){
+              retire_age = 65;
+              retirement_age = document.getElementById('retirementAge').value = '65';
+            }
+
+            if(!spending){
+              spending = 2500;
+              monthly_spending = document.getElementById('retirementSpending').value = '2500';
+            }
+
+            if(!life){
+              life = 90;
+              life_expectancy = document.getElementById('lifeExpectancy').value = '90';
+            }
+
+            if(!other){
+              other = 0;
+              other_expected_income = document.getElementById('otherExpectedIncome').value = '0';
+            }
+
+            /*amount needed for retirement, the easy part*/
+            var needed_for_retirement = (monthly_spending * 12) * retirement_duration;
+
+            console.log(needed_for_retirement);
+
+          /*let's get funky*/
+          var total = 0;
+          for(i=1; i<=years_to_retire; i++){
+              
+              total = salary * Math.pow(1.02,i);
+              
+              total = total * income_percent_saved_monthly_decimal;
+              adjusted_savings = adjusted_savings + total;
+              
+              
+          }
+
+          console.log("final savings: " + adjusted_savings);
+
+          /*calculate rtirement savings*/
+          var total_retirement_fund = adjusted_savings + other_expected_at_retirement + savings;
+
+          var final=total_retirement_fund.toFixed(2)
+
+          /*add commas where they should be in the result*/
+          function numberWithCommas(x) {
+            result = x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return result;
+            }
+
+            var totalNeededToRetire = document.getElementById('totalNeededToRetire');
+            totalNeededToRetire.style.display = 'block';
+            totalNeededToRetire.innerHTML = '';
+            var results1 = document.createElement('div');
+            results1.innerHTML = '<h1 style="text-align:center">Estimated amount needed to retire:<br/></h1>' + '<h3 style="text-align:center">$' + numberWithCommas(needed_for_retirement) + '</h3>';
+
+            totalNeededToRetire.append(results1);
+
+            var totalSavedAtRetirement = document.getElementById('totalSavedAtRetirement');
+            totalSavedAtRetirement.style.display = 'block';
+            totalSavedAtRetirement.innerHTML = '';
+            var results2 = document.createElement('div');
+            results2.innerHTML = '<h1 style="text-align:center">Estimated total savings at retirement:<br/></h1>' + '<h3 style="text-align:center">$' + numberWithCommas(final) + '</h3>';
+
+            totalSavedAtRetirement.append(results2);
+
       }
-
-      if(!months){
-        months = 60;
-        loanTerm = document.getElementById('loanTerm').value = '60';
-      }
-
-      if(!downPayment){
-        down = 0;
-        downPayment = document.getElementById('downPayment').value = '0';
-      }
-
-      if(!trade){
-        trade = 0;
-        tradeValue = document.getElementById('tradeValue').value = '0';
-      }
-
-      if(!interest){
-        interest = 3.25;
-        intRate = document.getElementById('intRate').value = '3.25';
-      }
-
-
-      /*var calc = ((monInt + (monInt / (Math.pow((1 + monInt), months) -1))) * (amount - (totalDown || 0))); */
-
-      power = Math.pow(1+monInt, negLoanTerm).toFixed(4);
-      console.log(power);
-
-      var principal = ((targetPayment * (1-power)) / (monInt));
-     
-
-      var total = principal+totalDown;
-      var calc = total.toFixed(2);
-
-      function numberWithCommas(x) {
-      result = x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      return result;
-}
-
-      var paymentResults = document.getElementById('paymentResults');
-      paymentResults.style.display = 'block';
-      paymentResults.innerHTML = '';
-      var results = document.createElement('div');
-      results.innerHTML = '<h1 style="text-align:center">Estimated Car Value is:<br/></h1>' + '<h3 style="text-align:center">$' + numberWithCommas(calc) + '</h3>';
-
-      paymentResults.append(results);
-    }
   </script>
 
    <!--JS FUNCTION END-->

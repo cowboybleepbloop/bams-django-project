@@ -1,5 +1,7 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponseRedirect, HttpResponse
+from .forms import ContactForm
+from django.core.mail import send_mail, BadHeaderError
 from django.urls import reverse
 from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -107,6 +109,8 @@ def home_affordability_calculator(request):
     return render(request, 'flp_app/home-affordability-calculator.html', {'title': 'Home Affordability Calculator'})
 def student_loan_calculator(request): 
     return render(request, 'flp_app/student-loan-calculator.html', {'title': 'Student Loan Calculator'})
+def retirement_calculator(request): 
+    return render(request, 'flp_app/retirement-calculator.html', {'title': 'Retirement Calculator'})
 #calculator landing page
 def calculators(request): 
     return render(request, 'flp_app/calculators.html', {'title': 'Calculators'})
@@ -170,3 +174,24 @@ class PostDeleteView(DeleteView):
     #    return Post.objects.filter(category=self.kwargs.get('pk'))
 
 
+def contact(request):
+        if request.method == 'POST':
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                subject = "Website Inquiry" 
+                body = {
+                'first_name': form.cleaned_data['first_name'], 
+                'last_name': form.cleaned_data['last_name'], 
+                'email': form.cleaned_data['email_address'], 
+                'message':form.cleaned_data['message'], 
+                }
+                message = "\n".join(body.values())
+
+                try:
+                    send_mail(subject, message, 'admin@example.com', ['admin@example.com']) 
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                return redirect ("index")
+
+        form = ContactForm()
+        return render(request, "contact-us.html", {'form: form}'})
