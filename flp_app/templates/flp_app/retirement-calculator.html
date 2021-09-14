@@ -15,7 +15,7 @@
             <div class="card my-3">
               <div class="card-body">
               <h5 class="card-title text-dark">Are you on track for retirement?</h5>
-              <p class="card-text text-dark">It feels far away but it is coming. The earlier you can start saving the better. Even if it's just a little.Try playing around with the age input to see how much it affects your projected savings. This calculator assumes you aren't investing your savings but we highly highly recommend that you do. Learn more about saving for retirement on our blog.
+              <p class="card-text text-dark">It feels far away but it is coming. The earlier you can start saving the better, even if it's just a little. Try playing around with the age input to see how much it affects your projected savings. This calculator assumes you aren't investing your savings but we highly highly recommend that you do. Learn more about saving for retirement on our blog.
               </p>
               <a href="{% url 'blog-detail' 9 %}" class="btn btn-primary d-inline">The rundown on saving for retirement</a>
               </div>
@@ -40,7 +40,7 @@
 
                 <div class="col-md-6 my-3">
                     <div class="form-group">
-                    <label for="loanTerm">How much are you saving monthly toward your retirement?</label>
+                    <label for="loanTerm">How much are you saving <strong>monthly</strong> toward your retirement?</label>
                     <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="monthlySavings" placeholder="Monthly Savings" value="0">
                     </div>
                 </div>
@@ -54,7 +54,7 @@
 
                 <div class="col-md-6 my-3">
                   <div class="form-group">
-                  <label for="downPayment">How much do you expect to spend monthly during retirement?</label>
+                  <label for="downPayment">How much do you expect to spend <strong>monthly</strong> during retirement?</label>
                   <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="retirementSpending" placeholder="Monthly Retirement Spanding" value="2500">
                   </div>
               </div>
@@ -75,7 +75,7 @@
 
                 <div class="col-md-6 my-3">
                   <div class="form-group">
-                  <label for="downPayment">Have any other expected monthly income?</label>
+                  <label for="downPayment">Have any other expected <strong>monthly</strong> income?</label>
                   <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" id="otherExpectedIncome" placeholder="Other Expected Monthly Income" value="0">
                   </div>
               </div>

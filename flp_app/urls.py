@@ -10,6 +10,7 @@ urlpatterns = [
     path('disclaimer/', views.disclaimer, name='disclaimer'),
     path('privacy-policy/', views.privacy_policy, name='privacy-policy'),
     path('terms-of-service/', views.tos, name='tos'),
+    path('faq/', views.faq, name='faq'),
     path('blog/', PostListView.as_view(), name='blog'),
     path('blog/<int:pk>/', PostDetailView.as_view(), name='blog-detail'),
     

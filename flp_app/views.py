@@ -24,6 +24,9 @@ def privacy_policy(request):
 def tos(request):
     return render(request, 'flp_app/tos.html', {'title': 'Terms of Service'} )
 
+def faq(request):
+    return render(request, 'flp_app/faq.html', {'title': 'Frequently Asked Questions'} )
+
 
 def disclaimer(request): 
     return render(request, 'flp_app/disclaimer.html', {'title': 'Disclaimer'})
@@ -194,4 +197,4 @@ def contact(request):
                 return redirect ("index")
 
         form = ContactForm()
-        return render(request, "contact-us.html", {'form: form}'})
+        return render(request, "flp_app/contact-us.html", {'form': form})
