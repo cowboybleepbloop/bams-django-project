@@ -4,13 +4,23 @@
 {% block content %}
     {% load static %}
 
+    <header>
+      <section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+      <div class="container">
+      <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark display-4 text-center">
+          <h1>Hi, {{ user.username }}</h1>
+      </div>
+      </div>
+  </section>
+  </header>
+
     <section>
         <div class="container mt-5">
 
             <div class="card col-12 my-5" ></div>
                 <img style="width: 18rem;" src="{{ user.profile.image.url }}" class="card-img-top rounded-circle" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Hi, {{ user.username }}</h5>
+                  <h5 class="card-title">{{ user.username }}</h5>
                   
                 </div>
                 <ul class="list-group list-group-flush">
