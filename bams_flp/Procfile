@@ -1,1 +1,1 @@
-web: gunicorn bams_flp.wsgi
+web: gunicorn bams_flp.wsgi --log-file -
