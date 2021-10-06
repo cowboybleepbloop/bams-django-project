@@ -1,1 +1,1 @@
-web: gunicorn bams_flp.wsgi
+web: gunicorn BAMS_FLP.wsgi
