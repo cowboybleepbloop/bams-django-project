@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import django_heroku
 import os
 import environ
 from pathlib import Path
@@ -164,4 +164,4 @@ GRAPH_MODELS = {
   'group_models': True,
 }
 
-
+django_heroku.settings(locals())
