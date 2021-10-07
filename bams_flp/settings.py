@@ -133,6 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+MEDIA_ROOT = Path.joinpath(BASE_DIR, 'static')
 STATIC_URL = '/flp_app/static/flp_app/' #location of static files
 
 
