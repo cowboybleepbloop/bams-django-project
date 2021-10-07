@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'tinymce',
     'ckeditor',
+    'whitenoise.runserver_nostatic',
     
 
 ]
